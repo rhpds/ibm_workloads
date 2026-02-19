@@ -2,7 +2,11 @@
 - name: Deploy FusionServiceInstance data cataloging
   kubernetes.core.k8s:
     state: present
-    definition: "{{ lookup('template', 'fusionserviceinstance_datacataloging.yml.j2') | from_yaml }}"
+    template: fusionserviceinstance_datacataloging.yml.j2
+  register: r_fusionserviceinstance
+  retries: 100
+  delay: 10
+  until: r_fusionserviceinstance is success
 
 - name: Wait for FusionServiceInstance to be fully deployed
   kubernetes.core.k8s_info:

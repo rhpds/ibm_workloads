@@ -27,7 +27,11 @@
 - name: Deploy SpectrumFusion (and accept the license)
   kubernetes.core.k8s:
     state: present
-    definition: "{{ lookup('template', 'spectrumfusion.yml.j2') | from_yaml }}"
+    template: spectrumfusion.yml.j2
+  register: r_spectrumfusion
+  retries: 100
+  delay: 10
+  until: r_spectrumfusion is success
 
 # This takes about 20 minutes to fully deploy (with GlobalDataPlatform enabled)
 - name: Wait for SpectrumFusion to be fully deployed
