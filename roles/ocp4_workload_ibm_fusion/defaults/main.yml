@@ -29,7 +29,8 @@ ocp4_workload_ibm_fusion_storage_system_deploy_timeout: 600
 # Storage classes
 # --------------------------------
 ocp4_workload_ibm_fusion_update_default_storage_class: true
-ocp4_workload_ibm_fusion_new_default_storage_class_name: ibm-spectrum-fusion-mgmt-sc
+# ocp4_workload_ibm_fusion_new_default_storage_class_name: ibm-spectrum-fusion-mgmt-sc
+ocp4_workload_ibm_fusion_new_default_storage_class_name: ocs-storagecluster-ceph-rbd
 
 # -----------------------------------
 # Additional Fusion Service Instances
