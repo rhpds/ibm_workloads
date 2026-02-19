@@ -24,7 +24,7 @@
 
 - name: Wait for the console plugin to become available
   kubernetes.core.k8s_info:
-    api_version: console.openshift.io/v1alpha1
+    api_version: console.openshift.io/v1
     kind: ConsolePlugin
     name: odf-console
   register: r_console_plugin
