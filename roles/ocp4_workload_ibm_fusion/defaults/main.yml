@@ -22,8 +22,8 @@ ocp4_workload_ibm_fusion_deploy_global_data_platform: false
 # --------------------------------
 ocp4_workload_ibm_fusion_storage_class: gp3-csi
 ocp4_workload_ibm_fusion_storage_size: 512Gi
-ocp4_workload_ibm_fusion_storage_cluster_deploy_timeout: 600
-ocp4_workload_ibm_fusion_storage_system_deploy_timeout: 600
+ocp4_workload_ibm_fusion_storage_cluster_deploy_timeout: 1800
+# ocp4_workload_ibm_fusion_storage_system_deploy_timeout: 600
 
 # --------------------------------
 # Storage classes
