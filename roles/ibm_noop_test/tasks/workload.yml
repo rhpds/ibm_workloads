@@ -1,0 +1,20 @@
+---
+- name: "[NOOP] Simulating provisioning for GUID {{ guid }}"
+  ansible.builtin.debug:
+    msg: "Noop provision started — GUID: {{ guid }}"
+
+- name: "[NOOP] Generate fake authorization link"
+  ansible.builtin.set_fact:
+    _noop_authorization_link: "https://cloud.ibm.com/authorize/noop-{{ guid }}-tp?fake=true"
+
+- name: "[NOOP] Generate fake project link"
+  ansible.builtin.set_fact:
+    _noop_project_link: "https://us-east.lakehouse.cloud.ibm.com/wx/home?context=fake-crn-{{ guid }}"
+
+- name: "[NOOP] Report user info"
+  agnosticd.core.agnosticd_user_info:
+    msg: "Noop provisioning complete for {{ guid }}"
+    data:
+      authorization_link: "{{ _noop_authorization_link }}"
+      project_link: "{{ _noop_project_link }}"
+      guid: "{{ guid }}"

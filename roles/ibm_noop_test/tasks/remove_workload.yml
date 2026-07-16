@@ -1,0 +1,8 @@
+---
+- name: "[NOOP] Simulating destroy for GUID {{ guid }}"
+  ansible.builtin.debug:
+    msg: "Noop destroy started — GUID: {{ guid }}"
+
+- name: "[NOOP] Destroy complete"
+  ansible.builtin.debug:
+    msg: "Noop destroy complete for {{ guid }}"
